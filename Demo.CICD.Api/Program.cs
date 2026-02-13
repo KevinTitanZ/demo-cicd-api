@@ -13,7 +13,9 @@ app.MapGet("/version", () => Results.Ok(new
 {
     service = "Demo.CICD.Api",
     env = app.Environment.EnvironmentName,
-    build = Environment.GetEnvironmentVariable("GIT_SHA") ?? "local"
+    build = Environment.GetEnvironmentVariable("GIT_SHA") ?? "local",
+    author = "Kevin Titan",
+    timestamp = DateTime.UtcNow
 }));
 
 app.Run();
